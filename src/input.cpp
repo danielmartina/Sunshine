@@ -1498,24 +1498,6 @@ namespace input {
 
     // We can only batch certain message types
     switch (util::endian::little(dest->magic)) {
-      case MOUSE_MOVE_REL_MAGIC_GEN5:
-        return batch((PNV_REL_MOUSE_MOVE_PACKET) dest, (PNV_REL_MOUSE_MOVE_PACKET) src);
-      case MOUSE_MOVE_ABS_MAGIC:
-        return batch((PNV_ABS_MOUSE_MOVE_PACKET) dest, (PNV_ABS_MOUSE_MOVE_PACKET) src);
-      case SCROLL_MAGIC_GEN5:
-        return batch((PNV_SCROLL_PACKET) dest, (PNV_SCROLL_PACKET) src);
-      case SS_HSCROLL_MAGIC:
-        return batch((PSS_HSCROLL_PACKET) dest, (PSS_HSCROLL_PACKET) src);
-      case MULTI_CONTROLLER_MAGIC_GEN5:
-        return batch((PNV_MULTI_CONTROLLER_PACKET) dest, (PNV_MULTI_CONTROLLER_PACKET) src);
-      case SS_TOUCH_MAGIC:
-        return batch((PSS_TOUCH_PACKET) dest, (PSS_TOUCH_PACKET) src);
-      case SS_PEN_MAGIC:
-        return batch((PSS_PEN_PACKET) dest, (PSS_PEN_PACKET) src);
-      case SS_CONTROLLER_TOUCH_MAGIC:
-        return batch((PSS_CONTROLLER_TOUCH_PACKET) dest, (PSS_CONTROLLER_TOUCH_PACKET) src);
-      case SS_CONTROLLER_MOTION_MAGIC:
-        return batch((PSS_CONTROLLER_MOTION_PACKET) dest, (PSS_CONTROLLER_MOTION_PACKET) src);
       default:
         // Not a batchable message type
         return batch_result_e::terminate_batch;
