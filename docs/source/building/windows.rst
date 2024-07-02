@@ -39,7 +39,11 @@ Build
 
 .. code-block:: bash
 
-   cmake -G "MinGW Makefiles" ..
+   cmake \
+  -DBUILD_DOCS=OFF \
+  -DBUILD_TESTS=OFF \
+  -G "MinGW Makefiles" ..
+  
    mingw32-make -j$(nproc)
 
    cpack -G NSIS  # optionally, create a windows installer
