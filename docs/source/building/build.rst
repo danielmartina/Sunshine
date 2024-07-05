@@ -11,7 +11,7 @@ Clone
 Ensure `git <https://git-scm.com/>`__ is installed and run the following:
    .. code-block:: bash
 
-      git clone https://github.com/lizardbyte/sunshine.git --recurse-submodules
+      git clone https://github.com/danielmartina/sunshine.git --recurse-submodules
       cd sunshine && mkdir build && cd build
 
 Compile

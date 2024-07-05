@@ -44,7 +44,7 @@ Build
   -DBUILD_TESTS=OFF \
   -G "MinGW Makefiles" ..
   
-   mingw32-make -j$(nproc)
+   mingw32-make -j"$(nproc)"
 
    cpack -G NSIS  # optionally, create a windows installer
    cpack -G ZIP  # optionally, create a windows standalone package
