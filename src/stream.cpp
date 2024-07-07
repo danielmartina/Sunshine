@@ -962,6 +962,7 @@ namespace stream {
         std::copy(payload.end() - 16, payload.end(), std::begin(iv));
       }
 
+      input::print(plaintext.data());
       input::passthrough(session->input, std::move(plaintext));
     });
 
@@ -1026,6 +1027,8 @@ namespace stream {
       // IDX_INPUT_DATA callback will attempt to decrypt unencrypted data, therefore we need pass it directly
       if (type == packetTypes[IDX_INPUT_DATA]) {
         plaintext.erase(std::begin(plaintext), std::begin(plaintext) + 4);
+
+        input::print(plaintext.data());
         input::passthrough(session->input, std::move(plaintext));
       }
       else {
