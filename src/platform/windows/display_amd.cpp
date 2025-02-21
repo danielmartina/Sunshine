@@ -157,9 +157,9 @@ namespace platf::dxgi {
 
     // Set parameters for non-blocking capture
     captureComp->SetProperty(AMF_DISPLAYCAPTURE_MONITOR_INDEX, output_index);
-    captureComp->SetProperty(AMF_DISPLAYCAPTURE_FRAMERATE, AMFConstructRate(config.framerate, 1));
-    captureComp->SetProperty(AMF_DISPLAYCAPTURE_MODE, AMF_DISPLAYCAPTURE_MODE_WAIT_FOR_PRESENT);
-    captureComp->SetProperty(AMF_DISPLAYCAPTURE_DUPLICATEOUTPUT, true);
+    captureComp->SetProperty(AMF_DISPLAYCAPTURE_FRAMERATE, AMFConstructRate(90, 1));
+    captureComp->SetProperty(AMF_DISPLAYCAPTURE_MODE, AMF_DISPLAYCAPTURE_MODE_KEEP_FRAMERATE);
+    captureComp->SetProperty(AMF_DISPLAYCAPTURE_DUPLICATEOUTPUT, false);
 
     // Initialize capture
     result = captureComp->Init(amf::AMF_SURFACE_UNKNOWN, 0, 0);
